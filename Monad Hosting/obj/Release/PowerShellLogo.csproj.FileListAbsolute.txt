@@ -1,0 +1,7 @@
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\PowerShellLogo.csproj.GenerateResource.Cache
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\bin\Release\PowerShellLogo.exe
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\bin\Release\PowerShellLogo.pdb
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\PowerShellLogo.Properties.Resources.resources
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\PowerShellLogo.exe
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\PowerShellLogo.pdb
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\PowerShellLogo.PowerShellHost.resources

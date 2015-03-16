@@ -1,0 +1,202 @@
+################################################################################
+##
+## Draw a circle.
+##
+################################################################################
+
+$turtle.Reset()
+foreach($x in 1..360)
+{
+   $turtle.Forward(1)
+   $turtle.Right(1)
+}
+
+
+################################################################################
+##
+## Draw a spiral.
+##
+################################################################################
+
+$turtle.Reset()
+
+function spiral($size)
+{
+   if($size -gt 30) { return }
+
+   $turtle.Forward($size)
+   $turtle.Right(15)
+
+   spiral($size * 1.02)
+}
+
+spiral 5
+
+
+################################################################################
+##
+## Draw something that looks a little like a flower.
+##
+################################################################################
+
+$turtle.Reset()
+
+function flower($thickness)
+{
+   $sides = 12
+   $length = 36
+
+   foreach($petal in 0..$thickness)
+   {
+      foreach($counter in 1..$sides)
+      {
+         $turtle.Forward($length)
+         $turtle.Right(360/$sides)
+      }
+      
+      $turtle.Right((360/$thickness))
+   }
+}
+
+flower 20
+
+
+################################################################################
+##
+## Draw a set of intersecting circles.
+##
+################################################################################
+
+$turtle.Reset()
+
+foreach($x in 1..(360/3))
+{
+   foreach($x in 1..180)
+   {
+      $turtle.Forward(12)
+      $turtle.Right(2)
+   }
+
+   $turtle.Right(3)
+}
+
+
+################################################################################
+##
+## Draw a tree.
+##
+################################################################################
+
+$random = new-object Random
+
+$turtle.Reset()
+$turtle.PenUp()
+$turtle.Backward(150)
+$turtle.PenDown()
+
+function tree($size)
+{
+  if($size -lt 5) { return }
+
+  $turtle.Forward($size)
+
+  $turtle.Left(30)
+  tree($size * ($random.NextDouble() * 0.8 + 0.2))
+
+  $turtle.Right(60)
+  tree($size * ($random.NextDouble() * 0.8 + 0.2))
+
+  $turtle.Left(30)
+  $turtle.Backward($size)
+}
+tree 100
+
+
+################################################################################
+##
+## Draw a fern.
+## Warning -- takes about 40 seconds to compute.
+##
+################################################################################
+
+$turtle.Reset()
+
+function fern($size)
+{
+   if($size -lt 5) { return }
+   
+   $turtle.Forward($size / 20)
+   $turtle.Left(80)
+   fern ($size * 0.3)
+   
+   $turtle.Right(82)
+   $turtle.Forward($size / 20)
+
+   $turtle.Right(80)
+   fern ($size * 0.3)
+
+   $turtle.Left(78)
+   fern ($size * 0.9)
+
+   $turtle.Left(2)
+   $turtle.Backward($size / 20)
+   
+   $turtle.Left(2)
+   $turtle.Backward($size / 20)
+}
+
+$turtle.PenUp()
+$turtle.Left(90)
+$turtle.Forward(50)
+$turtle.Left(90)
+$turtle.Forward(180)
+$turtle.Right(180)
+$turtle.PenDown()
+
+fern 440
+
+
+################################################################################
+##
+## Graph the working set of processes in the system.  In MSH Logo.
+## Yes. I am ashamed.
+##
+################################################################################
+
+$turtle.Reset()
+
+function bar($value, $max, $screenHeight)
+{
+   $turtle.Forward($value / $max * $screenHeight)
+   $turtle.Right(90)
+   $turtle.Forward(20)
+   $turtle.Right(90)
+   $turtle.Forward($value / $max * $screenHeight)
+   $turtle.Left(90)
+   $turtle.Forward(10)
+   $turtle.Left(90)
+}
+
+$turtle.PenUp()
+$turtle.Backward(200)
+$turtle.Left(90)
+$turtle.Forward(500)
+$turtle.Right(90)
+$turtle.PenDown()
+
+## Get max workingSet
+$maxWorkingSet = 0
+foreach($process in get-process)
+{
+   if($process.WorkingSet -gt $maxWorkingSet) 
+   {
+      $maxWorkingSet = $process.WorkingSet
+      "Got new max: $maxWorkingSet`n"
+   }
+}
+
+## Graph them
+foreach($process in get-process)
+{
+   bar $process.WorkingSet $maxWorkingSet 400
+}

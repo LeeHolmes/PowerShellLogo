@@ -1,0 +1,8 @@
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\bin\Release\Monad Hosting.exe
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\bin\Release\Monad Hosting.pdb
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad Hosting.csprojResolveAssemblyReference.cache
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad_Hosting.MonadHost.resources
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad_Hosting.Properties.Resources.resources
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad Hosting.csproj.GenerateResource.Cache
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad Hosting.exe
+D:\Lee\Visual Studio Projects\Monad Hosting 2\Monad Hosting\obj\Release\Monad Hosting.pdb
